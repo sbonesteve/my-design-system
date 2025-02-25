@@ -1,0 +1,62 @@
+{
+  "name": "my-design-system",
+  "version": "0.0.0",
+  "description": "Design System avec génération de Web Components depuis React",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build:css": "node scripts/build-css.js",
+    "build:react": "node scripts/build-react.js",
+    "build:wc": "node scripts/build-wc-from-react.js",
+    "build": "npm run build:css && npm run build:react && npm run build:wc",
+    "figma-tokens": "node scripts/figma-to-tokens.js",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-to-webcomponent": "^2.0.0",
+    "prop-types": "^15.8.1",
+    "lit": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@chromatic-com/storybook": "^3.2.4",
+    "@eslint/js": "^9.17.0",
+    "@storybook/addon-actions": "^7.0.24",
+    "@storybook/addon-essentials": "^8.5.4",
+    "@storybook/addon-links": "^7.6.7",
+    "@storybook/addon-interactions": "^8.5.4",
+    "@storybook/addon-onboarding": "^8.5.4",
+    "@storybook/blocks": "^8.5.4",
+    "@storybook/react": "^8.5.4",
+    "@storybook/react-vite": "^8.5.4",
+    "@storybook/test": "^8.5.4",
+    "@storybook/web-components": "^7.6.20",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "eslint-plugin-storybook": "^0.11.2",
+    "globals": "^15.14.0",
+    "postcss": "^8.5.3",
+    "prop-types": "^15.8.1",
+    "sass": "^1.85.0",
+    "storybook": "^8.5.4",
+    "vite": "^6.0.5",
+    "babel-loader": "^9.1.2",
+    "node-fetch": "^3.3.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
+}

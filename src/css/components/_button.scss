@@ -1,0 +1,43 @@
+@import '../variables';
+@import '../mixins';
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 4px;
+  font-family: map-get($font-families, 'base');
+  font-size: map-get($font-sizes, 'md');
+  font-weight: map-get($font-weights, 'medium');
+  line-height: map-get($line-heights, 'normal');
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  
+  &:focus {
+    @include focusRing;
+  }
+  
+  // Variantes
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-100);
+    border: 1px solid var(--color-primary);
+    
+    &:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+    }
+  }
+  
+  &--secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    
+    &:hover {
+      background-color: rgba(map-get($colors, 'primary'), 0.1);
+    }
+  }
+}
